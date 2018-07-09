@@ -1,4 +1,8 @@
+![](./docs/imgs/logo-orango.svg)
+
 # Platform Monorepo 
+
+
 
 ### Monorepo for all o-rango components related with architecture and platform.
 
