@@ -8,13 +8,13 @@ const MockRoutesHome2 = [{  url: '/home/:id/:param/' } , {  url: '/about:id' }];
 describe('Router Matcher - Tests - /home/*' , () => {
   test('/home/* => /home/' , async (done) => {
     const r = await routeMatch(MockRoutesHome , MockReqUrlHome[0]);
-    expect(await r).toEqual(true);
+    expect(await r).toEqual(MockRoutesHome[0]);
     done();
   });
 
   test('/home/* =>  /home/1/3/profile ' , async (done) => {
     const r = await routeMatch(MockRoutesHome , MockReqUrlHome[1]);
-    expect(await r).toEqual(true);
+    expect(await r).toEqual(MockRoutesHome[0]);
     done();
   });
 

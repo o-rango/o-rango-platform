@@ -6,5 +6,5 @@ export async function routeMatch(matcher: any, reqUrl: string) {
     const match = rgxprm(item.url);
     return match.pattern.test(reqUrl);
   });
-  return  await result.length !== 0 ? true : false;
+  return  await result.length !== 0 ? result[0] : false;
 }
