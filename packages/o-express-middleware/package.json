@@ -1,0 +1,56 @@
+{
+  "name": "@o-rango/o-express-middleware",
+  "author": {
+    "name": "Romulo Cintra",
+    "email": "orango.tech.platform@gmail.com",
+    "url": "https://o-rango.io"
+  },
+  "description": "o-rango-platform express middleware",
+  "version": "0.0.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/g-plane/o-express-middleware"
+  },
+  "private": false,
+  "keywords": [],
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "test": "jest --watchAll",
+    "coverage": "jest --coverage",
+    "lint": "tslint --formatters-dir ./node_modules/tslint-formatter-beauty -t beauty -p .",
+    "build": "tsc -p .",
+    "dev": "tsc -w -p .",
+    "prepublishOnly": "npm build"
+  },
+  "jest": {
+    "verbose": true,
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "testEnvironment": "node",
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "json",
+      "node"
+    ],
+    "testRegex": "(/tests/.*|\\.(test|spec))\\.(tsx?|jsx?)$"
+  },
+  "dependencies": {
+    "winston": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.1.4",
+    "@types/node": "^10.5.2",
+    "@types/winston": "^2.3.9",
+    "codecov": "^3.0.0",
+    "jest": "^23.3.0",
+    "jest-extended": "^0.7.1",
+    "ts-jest": "^23.0.0",
+    "tslint": "^5.9.1",
+    "tslint-config-gplane": "^3.0.0-beta.2",
+    "typescript": "^2.8.3"
+  }
+}
