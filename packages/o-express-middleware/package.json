@@ -19,7 +19,7 @@
   "scripts": {
     "test": "jest --watchAll",
     "coverage": "jest --coverage",
-    "lint": "tslint --formatters-dir ./node_modules/tslint-formatter-beauty -t beauty -p .",
+    "lint": "tslint  --fix",
     "build": "tsc -p .",
     "dev": "tsc -w -p .",
     "prepublishOnly": "npm build"
@@ -51,6 +51,7 @@
     "ts-jest": "^23.0.0",
     "tslint": "^5.9.1",
     "tslint-config-gplane": "^3.0.0-beta.2",
+    "tslint-formatter-beauty": "^3.0.0-beta.2",
     "typescript": "^2.8.3"
   }
 }
