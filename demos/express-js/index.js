@@ -2,6 +2,7 @@ var express = require('express')
 var http = require('http');
 var app = express();
 const route = require('@o-rango/o-express-middleware')
+let port = process.env.PORT || "3050";
 
 
 const config =  [
@@ -30,19 +31,10 @@ const config =  [
 		}
 	}
 ];
+// Set app configuration First;
+route.routerConfig(config);
 
-const router = express.Router();
-
-route.routerConfig(config).then(async()=>{
-	app.use( await route.routerHandler);
-});
-
-
-// In case you want to try https!!!
-const server = http.createServer(app);
-let port = process.env.PORT || "3050";
-
-
-server.listen(port, () => {
+app.use(route.routerHandler);
+app.listen(port, () => {
 	console.log(`Server listening on port ${port}`);
 });
