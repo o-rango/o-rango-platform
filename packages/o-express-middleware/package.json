@@ -38,14 +38,22 @@
     ],
     "testRegex": "(/tests/.*|\\.(test|spec))\\.(tsx?|jsx?)$"
   },
+  "peerDependencies": {
+    "express": ">=4.0.0"
+  },
   "dependencies": {
-    "winston": "^3.0.0"
+    "winston": "^3.0.0",
+    "axios": "^0.18.0",
+    "regexparam": "^1.0.1"
   },
   "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/express": "^4.16.0",
     "@types/jest": "^23.1.4",
     "@types/node": "^10.5.2",
     "@types/winston": "^2.3.9",
     "codecov": "^3.0.0",
+    "express": ">=4.0.0",
     "jest": "^23.3.0",
     "jest-extended": "^0.7.1",
     "ts-jest": "^23.0.0",
