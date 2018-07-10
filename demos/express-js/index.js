@@ -7,25 +7,25 @@ let port = process.env.PORT || "3050";
 
 const config =  [
 	{
-		url : '/main' ,
+		url : '/home' ,
 		handler : (ua , props)=>{
 			return {
-				ssr: ua ? 'http://127.0.0.1:99/com2/' : 'http://127.0.0.1:99/com2/',
+				ssr: ua ? 'https://stenc.a' : 'https://stenciljs.com/docs-content/reference/forms.html',
 				fallback : {
-					tag : '<o-content-placeholder-block line-height="50" margin="6" animation="true" lines="8"></o-content-placeholder-block>',
-					script : 'https://unpkg.com/@o-rango/o-content-placeholder@0.1.1/dist/o-content-placeholder.js'
+					tag : '<o-content-placeholder-block line-height="50" margin="6" animation="true" lines="8"></o-content-placeholder-block><o-content-placeholder-block line-height="50" margin="6" animation="true" lines="8"></o-content-placeholder-block><o-content-placeholder-block line-height="50" margin="6" animation="true" lines="8"></o-content-placeholder-block><o-content-placeholder-block line-height="50" margin="6" animation="true" lines="8"></o-content-placeholder-block><o-content-placeholder-block line-height="50" margin="6" animation="true" lines="8"></o-content-placeholder-block><o-content-placeholder-block line-height="50" margin="6" animation="true" lines="8"></o-content-placeholder-block><o-content-placeholder-block line-height="50" margin="6" animation="true" lines="8"></o-content-placeholder-block><o-content-placeholder-block line-height="50" margin="6" animation="true" lines="8"></o-content-placeholder-block><o-content-placeholder-block line-height="50" margin="6" animation="true" lines="8"></o-content-placeholder-block><o-content-placeholder-block line-height="50" margin="6" animation="true" lines="8"></o-content-placeholder-block><o-content-placeholder-block line-height="50" margin="6" animation="true" lines="8"></o-content-placeholder-block><o-content-placeholder-block line-height="50" margin="6" animation="true" lines="8"></o-content-placeholder-block>',
+					script : 'https://unpkg.com/@o-rango/o-content-placeholder@0.1.5/dist/o-content-placeholder.js'
 				}
 		    }
 		}
 	},
 	{
-		url : '/home' ,
+		url : '/main' ,
 		handler : (ua , props)=>{
 			return {
-				ssr: ua ? 'http://127.0.0.1:9999/com1/' : 'http://127.0.0.1:9999/com1/',
+				ssr: ua ? 'https://stenc.com' : 'https://stenciljs.com/docs-content/introduction/getting-started.html',
 				fallback : {
-					tag : '<my-component></my-component>',
-					script : 'https://unpkg.com/@o-rango/o-content-placeholder@0.1.1/dist/o-content-placeholder.js'
+					tag : '<o-demo-bar name="Demo o-content-placeholder"></o-demo-bar>',
+					script : 'https://unpkg.com/@o-rango/orango-demo-tools/dist/orango-demo-tools.js'
 				}
 		    }
 		}
