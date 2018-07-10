@@ -6,7 +6,7 @@
     "url": "https://o-rango.io"
   },
   "description": "o-rango-platform express middleware",
-  "version": "0.0.1-0",
+  "version": "0.0.1",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -62,5 +62,8 @@
     "tslint-config-gplane": "3.0.0-beta.2",
     "tslint-formatter-beauty": "3.0.0-beta.2",
     "typescript": "2.9.2"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
