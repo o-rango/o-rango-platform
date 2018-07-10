@@ -9,3 +9,4 @@ script:
 after_script:
   - 'cat coverage/lcov.info | ./node_modules/.bin/coveralls'
   - 'npx codecov'
+  - 'lerna publish --conventional-commits --canary=beta'
