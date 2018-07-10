@@ -1,2 +1,3 @@
 docs/.DS_Store
 demos/express-js/node_modules
+packages/o-express-middleware/error.log
