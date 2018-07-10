@@ -17,6 +17,7 @@
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
+    "ci:test" : "jest --runInBand --coverage",
     "test": "jest --watchAll",
     "coverage": "jest --coverage",
     "lint": "tslint  --fix",
