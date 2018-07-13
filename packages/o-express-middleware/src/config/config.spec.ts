@@ -20,6 +20,7 @@ const MockConfigRouter = [
 const MockGlobalConfig = {
   defaultUrl : '/home',
   errorUrl : '/404',
+  templates : [{name : 'coca',  content: 'body'}],
 };
 
 
