@@ -1,7 +1,19 @@
 {
   "name": "o-rango-platform",
   "private": true,
+  "version": "0.0.0",
+  "description": "Agnostic Micro Front Ends Platform",
+  "scripts": {
+    "format": "prettier ./packages/**/**/*.ts --ignore-path ./.prettierignore --write && git status",
+    "lint": "tslint -p tsconfig.json -c tslint.json \"./packages/**/*.ts\" -e \"*.spec.ts\" --fix"
+  },
+  "engines": {
+    "node": ">= 8.9.0"
+  },
   "devDependencies": {
-    "lerna": "3.0.0-beta.21"
+    "lerna": "3.0.0-beta.21",
+    "prettier": "^1.13.7",
+    "tslint": "^5.11.0",
+    "typescript": "^2.9.2"
   }
 }

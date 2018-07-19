@@ -5,7 +5,6 @@ import { IConfig } from '../config/config-interfaces';
 import {routeMatch, UAChecker} from '../utils/';
 import logger from '../utils/logger';
 
-
 export async function routerHandler(req: Request, res: Response, next: NextFunction) {
   logger.log('debug' , `Router Handler initialized with req :  ${req.url}`);
   const profiler = logger.profile('processing view:');
