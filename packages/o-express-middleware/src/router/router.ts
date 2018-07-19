@@ -25,7 +25,6 @@ export async function routerHandler(req: Request, res: Response, next: NextFunct
   if (!route && !globalConfig.errorUrl) {
     res.status(404).send('NOT FOUND');
     next();
-    logger.profile('processing view:');
     return;
   }
 
