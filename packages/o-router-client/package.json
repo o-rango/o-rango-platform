@@ -1,0 +1,57 @@
+{
+  "name": "@o-rango/o-router-client",
+  "author": {
+    "name": "Romulo Cintra",
+    "email": "orango.tech.platform@gmail.com",
+    "url": "https://o-rango.io"
+  },
+  "description": "o-rango-platform client router",
+  "version": "0.0.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/o-rango/o-rango-platform/tree/master/packages/o-router-client"
+  },
+  "private": false,
+  "keywords": [],
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "ci:test": "jest --runInBand --coverage",
+    "test": "jest --watchAll",
+    "coverage": "jest --coverage",
+    "lint": "tslint  --fix",
+    "build": "tsc -p .",
+    "dev": "tsc -w -p .",
+    "prepublishOnly": "npm build"
+  },
+  "jest": {
+    "verbose": true,
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "testEnvironment": "node",
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "json",
+      "node"
+    ],
+    "testRegex": "(/tests/.*|\\.(test|spec))\\.(tsx?|jsx?)$"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jest": "^22.2.3",
+    "codecov": "3.0.4",
+    "jest": "23.4.0",
+    "jest-extended": "0.7.2",
+    "ts-jest": "23.0.0",
+    "tslint": "5.10.0",
+    "tslint-config-gplane": "3.0.0-beta.2",
+    "tslint-formatter-beauty": "3.0.0-beta.2",
+    "typescript": "^2.9.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
