@@ -58,9 +58,18 @@ header nav ul li a:hover {
 		<li><a class="o-link" href="/home">HOME</a></li>
 		<li><a class="o-link" href="/main">MAIN</a></li>
 		<li><a class="o-link" href="/alert">ALERT</a></li>
-		<li><a href="/home/123131">404</a></li>
+		<li><a class="o-link" href="/home/123131">404</a></li>
 	</ul>
 </nav>
+<script src="https://unpkg.com/page/page.js"></script>
+<script>
+page('/main', function(element){
+	document.querySelector('.content').innerHTML = '<br><br><br><br><br><br><br>viewing index';
+});
+
+page();
+	console.log('Load Page');
+</script>
 </header>
 `
 
@@ -72,7 +81,7 @@ axiosConfig : {
 }},
 errorUrl : 'https://stenciljs.com/asfadada/',
 // At Moment only one template is available
-templates : { name : 'home', zone:'<!--content-->', content : `<body>${head}<html>${tpl} <!--content--> </html></body>`}
+templates : { name : 'home', zone:'<!--content-->', content : `<body>${head}<html>${tpl}<div class="content"> <!--content--></div></html></body>`}
 }
 
 
@@ -131,7 +140,7 @@ const config =  [
 		url : '/alias' ,
 		handler : (mobile , props)=>{
 			return {
-				ssr: mobile ? 'https://stenc.com' : 'https://stenc.com',
+				ssr: mobile ? 'https://stenc.com' : 'https://www.bancsabadell.com/cs/Satellite/SabAtl/'	,
 				fallback : {
 					tag : '<o-demo-bar name="Demo o-content-placeholder"></o-demo-bar>',
 					script : 'https://unpkg.com/@o-rango/orango-demo-tools/dist/orango-demo-tools.js'
