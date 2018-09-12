@@ -61,27 +61,25 @@ header nav ul li a:hover {
 		<li><a class="o-link" href="/home/123131">404</a></li>
 	</ul>
 </nav>
-<script src="https://unpkg.com/page/page.js"></script>
-<script>
-page('/main', function(element){
-	document.querySelector('.content').innerHTML = '<br><br><br><br><br><br><br>viewing index';
-});
-
-page();
-	console.log('Load Page');
-</script>
+</body>
 </header>
+
+</body>
+<script type="text/javascript" src="/scripts/@o-rango/o-router-client/dist/index.js"></script>
 `
 
+const axios = { 
+	headers : {
+	'Content-Type': 'application/json;charset=UTF-8',
+	"Access-Control-Allow-Origin": "*",	
+	}
+};
+
 const configGlobal = {
-axiosConfig : { 
-	headers: {
-		'Content-Type': 'application/json;charset=UTF-8',
-		"Access-Control-Allow-Origin": "*",
-}},
+axiosConfig : { },
 errorUrl : 'https://stenciljs.com/asfadada/',
 // At Moment only one template is available
-templates : { name : 'home', zone:'<!--content-->', content : `<body>${head}<html>${tpl}<div class="content"> <!--content--></div></html></body>`}
+templates : { name : 'home', zone:'<!--content-->', content : `<body>${head}<html>${tpl}<!--content--></html></body>`}
 }
 
 
@@ -154,7 +152,7 @@ const config =  [
 route.routerConfig(config);
 
 route.globalConfig(configGlobal);
-
+app.use('/scripts', express.static(__dirname + '/node_modules/'));
 app.use(route.routerHandler);
 app.listen(port, () => {
 	console.log(`Server listening on port ${port}`);
