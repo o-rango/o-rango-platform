@@ -53,7 +53,7 @@
     "@types/jest": "23.1.4",
     "@types/node": "10.5.2",
     "@types/winston": "2.3.9",
-    "codecov": "3.0.4",
+    "codecov": "3.1.0",
     "express": "4.16.3",
     "jest": "23.4.0",
     "jest-extended": "0.7.2",
