@@ -6,9 +6,17 @@ let port = process.env.PORT || "3050";
 const head = ``;
 const tpl = `
 <style>
-body {
-margin : 0;
-font-family : 'Arial'
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, 
+body {  
+  height: 100%;
+  width: 100%;
+  font-family: 'Roboto';
 }
 header {
 	z-index :99999999;
@@ -76,7 +84,7 @@ const axios = {
 };
 
 const configGlobal = {
-axiosConfig : { },
+axiosConfig : { axios},
 errorUrl : 'https://stenciljs.com/asfadada/',
 // At Moment only one template is available
 templates : { name : 'home', zone:'<!--content-->', content : `<body>${head}<html>${tpl}<!--content--></html></body>`}
