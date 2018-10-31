@@ -1,73 +1,105 @@
 const tplBody = `
+<template id="navbar_tpl" >
 <style>
-*,
-*::before,
-*::after {
+     nav-bar {
+      display: flex;
+      position: relative;
+      flex-direction: column;
+      justify-content: space-between;
+      box-sizing: border-box;
+      width: 100%;
+      z-index:999999;
+     }
+  
+    
+    .navbar-fixed {
+      position: fixed;
+      top: var(--nav-height ,);
+    }
+    #navbar {
+      width: 100%;
+      color: var(--nav-color , white);
+      background: var(--nav-background , #072146);
+      font-weight: bold;
+      letter-spacing: 0.025em;
+    }
+    
+    #navbar ul {
+      text-align: center;
+      margin: 0;
+    }
+    
+    #navbar ul li {
+     display: inline-block;
+     padding: 0 3em;
+     line-height: 3em;
+    }
+    
+    #navbar ul li:hover {
+      background: #072146;
+    }  
+  
+  .link {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: medium;
+    cursor: pointer;
+    font-family : Arial
+    
+  }
+  </style>
+  <nav id="navbar">
+    <ul>
+      <li><a class="link" href="/home">Home</a></li>
+      <li><a class="link"  href="/error">Error</a></li>
+      <li><a class="link"  href="/alert">alert</a></li>
+      <li><a class="link"  href="/form">form</a></li>
+    </ul>
+  </nav>
+</template>
+ <head>
+  <script>
+  class NavBarCP extends HTMLElement {
+    constructor() {
+      super();
+      const shadowRoot = this.attachShadow({mode: 'open'});
+      const template = document.querySelector('#navbar_tpl');
+      const instance = template.content.cloneNode(true);
+      console.log('Create navbar');
+      this.shadowRoot.appendChild(instance);
+    }
+  }
+  customElements.define('nav-bar', NavBarCP);
+  </script>
+</head>
+<body>
+  <style>
+  html body {
+    font-size: 1.5em;
+    color: #222;
+    background: #fff;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+nav-bar {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-between;
   box-sizing: border-box;
-}
-
-html, 
-body {  
-  height: 100%;
   width: 100%;
-  font-family: 'Roboto';
-}
-header {
-	z-index :99999999;
-  position:absolute;
-  top:0;
-  left:0;
-  padding:0 100px;
-  background:#262626;
-  width:100%;
-  box-sizing:border-box;
-}
-header .menu {
-  color:white;
-  height:50px;
-  line-height:50px;
-  font-size:24px;
-  font-weight:bold;
-  float:left;
-}
-header nav {
-  float:right;
-}
-header nav ul {
-  margin:0;
-  padding:0;
-  display:flex;
-}
-header nav ul li {
-  list-style-type:none;
-}
-header nav ul li a {
-  color:White;
-  text-decoration:none;
-  line-height:50px;
-  padding: 0 20px;
-  display:block;
-}
+  z-index:999999;
+  -webkit-box-shadow: 1px 10px 38px -14px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 10px 38px -14px rgba(0,0,0,0.75);
+  box-shadow: 1px 10px 38px -14px rgba(0,0,0,0.75);
+ }
 
-header nav ul li a:hover {
-  background-color:#d42721;
-}
-</style>
-<header>
-<div class="menu">Micro Front</div>
-<nav>
-	<ul>
-		<li><a class="o-link" href="/home">HOME</a></li>
-		<li><a class="o-link" href="/main">MAIN</a></li>
-		<li><a class="o-link" href="/alert">ALERT</a></li>
-		<li><a class="o-link" href="/home/123131">404</a></li>
-	</ul>
-</nav>
+  </style>
+  <nav-bar></nav-bar>
 </body>
-</header>
-
-</body>
-<script type="text/javascript" src="/scripts/@o-rango/o-router-client/dist/index.js"></script>
 `
 
 
