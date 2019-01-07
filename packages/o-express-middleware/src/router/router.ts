@@ -4,9 +4,11 @@ import {getConfig} from '../config/config';
 import { IConfig } from '../config/config-interfaces';
 import {routeMatch, UAChecker} from '../utils/';
 import logger from '../utils/logger';
+import { throws } from 'assert';
 
 export async function routerHandler(req: Request, res: Response, next: NextFunction) {
   logger.log('debug' , `Router Handler initialized with req :  ${req.url}`);
+
   const profiler = logger.profile('processing view:');
   let htmlResult = '';
   const isMobile = await UAChecker(req.headers['user-agent']);
@@ -18,13 +20,16 @@ export async function routerHandler(req: Request, res: Response, next: NextFunct
     return Axios.get(url , globalConfig.axiosConfig);
   }
 
-  // Template Handler
-  const template = (content) => globalConfig.templates.content.replace(globalConfig.templates.zone , content);
-
   if (!route && !globalConfig.errorUrl) {
     res.status(404).send('NOT FOUND');
     next();
   }
+
+  const urlTemplate = globalConfig.templates[route.template];
+  const template = (content) => {
+    logger.info('Errara' ,  urlTemplate);
+    return urlTemplate.content.replace(urlTemplate.zone , content);
+  };
 
   try {
        const urlFetch = !route  && globalConfig.errorUrl !== '' ? globalConfig.errorUrl : route.handler(isMobile).ssr;
@@ -36,6 +41,8 @@ export async function routerHandler(req: Request, res: Response, next: NextFunct
       htmlResult = `${route.handler(isMobile).fallback.tag}<script async src="${route.handler(isMobile).fallback.script}"></script>`;
       /* tslint:enable */
   }
+
+
 
   res.send(template(htmlResult));
   next();

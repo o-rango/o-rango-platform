@@ -6,7 +6,7 @@ let globalConfiguration: IConfig;
 
 export async function globalConfig(options: IConfig) {
   if (options) {
-    logger.log( 'info' , `Initialize Config: ${JSON.stringify(options)}`);
+    //logger.log( 'info' , `Initialize Config: ${JSON.stringify(options)}`);
     globalConfiguration = {...options};
     Promise.resolve(globalConfiguration);
   } else {
@@ -17,7 +17,7 @@ export async function globalConfig(options: IConfig) {
 
 export async function routerConfig(options: IRoute[]) {
   if (options) {
-    logger.log('info', `Router Config: ${JSON.stringify(options)}`);
+    //logger.log('info', `Router Config: ${JSON.stringify(options)}`);
     routesConfiguration = [...options];
     Promise.resolve(routesConfiguration);
   } else {
