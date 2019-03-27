@@ -6,7 +6,7 @@
     "url": "https://o-rango.io"
   },
   "description": "o-rango-platform client router",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -39,7 +39,6 @@
     ],
     "testRegex": "(/tests/.*|\\.(test|spec))\\.(tsx?|jsx?)$"
   },
-  "dependencies": {},
   "devDependencies": {
     "@types/jest": "^22.2.3",
     "codecov": "3.0.4",
