@@ -42,7 +42,7 @@
   "dependencies": {},
   "devDependencies": {
     "@types/jest": "23.3.2",
-    "codecov": "3.0.4",
+    "codecov": "3.8.2",
     "jest": "23.4.0",
     "jest-extended": "0.7.2",
     "ts-jest": "24.0.0",
