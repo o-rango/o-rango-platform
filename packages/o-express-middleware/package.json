@@ -44,7 +44,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "regexparam": "^1.0.1",
+    "regexparam": "^2.0.0",
     "winston": "^3.0.0"
   },
   "devDependencies": {
